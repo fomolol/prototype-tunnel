@@ -135,7 +135,7 @@ function MyApp({ Component, pageProps }) {
       <UnsupportedOrientation />
 
       {/* COOKIE BANNER */}
-      <CookieBanner className="mb-4" visible={introAnimationComplete} />
+      {/* <CookieBanner className="mb-4" visible={introAnimationComplete} /> */}
     </>
   );
 }
