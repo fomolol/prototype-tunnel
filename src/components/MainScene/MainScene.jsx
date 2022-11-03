@@ -173,9 +173,9 @@ const MainScene = ({
       className={`${styles.main_scene} ${
         styles[`main_scene__${variant}`]
       } ${className}`}
-      style={{
-        maxHeight: `calc(100vh - 50px)`,
-      }}
+      // style={{
+      //   maxHeight: `calc(100vh - 50px)`,
+      // }}
     >
       <Stats showPanel={0} className="ml-0" />
       <Stats showPanel={1} className="ml-[80px]" />
@@ -215,13 +215,13 @@ const MainScene = ({
           >
             {/* <Scene /> */}
             {/* Wrap contents you want to scroll into <ScrollControls> */}
-            <ScrollControls pages={3}>
+            <ScrollControls>
               <Tunnel />
             </ScrollControls>
           </React.Suspense>
 
           {/* <Effects /> */}
-          <OrbitControls />
+          {/* <OrbitControls /> */}
           <gridHelper args={[30, 30, 30]} />
         </Canvas>
       </ErrorBoundary>
