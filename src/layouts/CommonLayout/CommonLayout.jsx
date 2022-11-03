@@ -17,7 +17,7 @@ import Scroller from '@/components/Scroller';
 import styles from './CommonLayout.module.css';
 
 import Cursor from '@/components/Cursor';
-import EffectsGlobal from '@/components/EffectsGlobal';
+// import EffectsGlobal from '@/components/EffectsGlobal';
 import DebugScreen from '@/components/DebugScreen';
 
 const DefaultLayout = ({
@@ -81,7 +81,7 @@ const DefaultLayout = ({
         </AnimatePresence>
 
         {/* GLOBAL THREEJS EFFECTS */}
-        <EffectsGlobal />
+        {/* <EffectsGlobal /> */}
       </Tag>
 
       <DebugScreen />

@@ -5,8 +5,9 @@ import { useStore } from '@/store';
 
 import { useHashScroll } from '@/hooks/useHashScoll';
 import { useLayoutEffect } from '@/hooks/useIsoLayoutEffect';
-import AnimatedText from '@/components/AnimatedText';
-import Text from '@/components/Text';
+
+// import AnimatedText from '@/components/AnimatedText';
+// import Text from '@/components/Text';
 // import { useTheme } from '@/hooks/useTheme';
 
 const MainScene = dynamic(() => import('@/components/MainScene'), {
@@ -38,7 +39,7 @@ export default function Home() {
       {loadMainScene ? (
         <div className="relative flex h-full min-h-[100vh] w-full flex-none">
           <MainScene />
-          <div className="flex h-full w-full items-center justify-center font-pp text-[100px]">
+          {/* <div className="flex h-full w-full items-center justify-center font-pp text-[100px]">
             <div className="absolute">
               <AnimatedText
                 tagName="p"
@@ -51,7 +52,7 @@ export default function Home() {
                 FOMOLOL
               </Text>
             </div>
-          </div>
+          </div> */}
         </div>
       ) : null}
     </>

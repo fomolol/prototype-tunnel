@@ -6,6 +6,13 @@ import PropTypes from 'prop-types';
 import useErrorBoundary from 'use-error-boundary';
 
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import {
+  ScrollControls,
+  Sky,
+  useScroll,
+  useGLTF,
+  useAnimations,
+} from '@react-three/drei';
 
 // Enabled for effects
 // import {
@@ -28,6 +35,7 @@ import * as STDLIB from 'three-stdlib';
 import styles from './MainScene.module.css';
 
 import Loader from '@/components/Loader';
+import Tunnel from '@/components/Tunnel';
 
 // Shader stack
 import './shaders/defaultShaderMaterial';
@@ -185,7 +193,19 @@ const MainScene = ({
             background: '#5865F2',
           }}
         >
-          <fog attach="fog" args={['floralwhite', 0, 20]} />
+          <ambientLight intensity={0.03} />
+          <fog attach="fog" args={['#ff5020', 5, 18]} />
+          <spotLight
+            angle={0.14}
+            color="#ffd0d0"
+            penumbra={1}
+            position={[25, 50, -20]}
+            shadow-mapSize={[2048, 2048]}
+            shadow-bias={-0.0001}
+            castShadow
+          />
+          <Sky scale={1000} sunPosition={[2, 0.4, 10]} />
+
           <React.Suspense
             fallback={
               <Html center lang="en">
@@ -193,7 +213,11 @@ const MainScene = ({
               </Html>
             }
           >
-            <Scene />
+            {/* <Scene /> */}
+            {/* Wrap contents you want to scroll into <ScrollControls> */}
+            <ScrollControls pages={3}>
+              <Tunnel />
+            </ScrollControls>
           </React.Suspense>
 
           {/* <Effects /> */}
