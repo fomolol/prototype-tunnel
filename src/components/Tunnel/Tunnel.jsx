@@ -19,7 +19,8 @@ export default function Tunnel(props) {
 
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
-    '/3d/tunneltest7_cam_action-transformed.glb',
+    // '/3d/tunneltest7_cam_action-transformed.glb',
+    '/3d/tunnerl_test.gltf',
   );
   const { actions } = useAnimations(animations, group);
 
@@ -38,7 +39,7 @@ export default function Tunnel(props) {
     action.time = THREE.MathUtils.damp(
       action.time,
       action.getClip().duration * offset,
-      100,
+      250,
       delta,
     );
   });
@@ -65,8 +66,10 @@ export default function Tunnel(props) {
         rotation={[Math.PI / 2, 0, 0]}
         scale={[1, 11.69, 1]}
       />
+      
     </group>
   );
 }
 
-useGLTF.preload('/3d/tunneltest7_cam_action-transformed.glb');
+// useGLTF.preload('/3d/tunneltest7_cam_action-transformed.glb');
+useGLTF.preload('/3d/tunnerl_test.glb');
