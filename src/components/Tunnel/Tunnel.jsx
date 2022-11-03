@@ -34,21 +34,13 @@ export default function Tunnel(props) {
   useFrame((state, delta) => {
     const action = actions['Action'];
     // The offset is between 0 and 1, you can apply it to your models any way you like
-    const offset = 1 - scroll.offset;
+    const offset = scroll.offset; // -1 - scroll.offset // (to start from end)
     action.time = THREE.MathUtils.damp(
       action.time,
       action.getClip().duration * offset,
       100,
       delta,
     );
-    // cameraRef.current.position.set(
-    //   Math.sin(offset) * -10,
-    //   Math.atan(offset * Math.PI * 2) * 5,
-    //   Math.cos((offset * Math.PI) / 3) * -10,
-    // );
-    // cameraRef.current.lookAt(0, 0, 0);
-
-    console.log('scroll.offset', scroll.offset);
   });
 
   return (
