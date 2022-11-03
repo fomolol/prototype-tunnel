@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Tunnel.module.css';
 
-import Model from './Tunneltest7_cam_action';
+import Model from './TunnelGLTF';
 
 const Tunnel = ({
   tagName: Tag = 'div',
